@@ -1,0 +1,5 @@
+# trigraph
+
+```plantuml
+(A) -> (B)
+```
