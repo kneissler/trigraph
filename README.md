@@ -1,3 +1,3 @@
 # trigraph
 
-![Trigraph Diagram](test.png)
+![Trigraph Diagram](overview.png)
