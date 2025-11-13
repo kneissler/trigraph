@@ -1,23 +1,45 @@
 @startuml
 rectangle "Nodes" {
-  node (source)
-  node (target)
+  node (MySheet)
+  node (MyText)
   node (A) as " " #black
-  (source) --> (A)
-  (A) --> (target)
+  (MySheet) -- (A)
+  (A) --> (MyText)
 }
 rectangle "Meta" {
+  node (Sheet)
+  node (Text)
+  node (Contains)
+  (MySheet) --> (Sheet) : type
+  (MyText) --> (Text) : type
+  (A) .> (Contains)
+  node (B) as " " #black
+  (Contains) -u- (B)
+  (B) -u-> (Sheet)
+  node (C) as " " #black
+  (Contains) -d- (C)
+  (C) -d-> (Text)
+}
+rectangle "MetaMeta" {
   node (sourceType)
   node (targetType)
-  node (edgeType)
-  (source) -> (sourceType) : type
-  (target) -> (targetType) : type
-  (A) -> (edgeType)
-  node (B) as " " #black
-  (edgeType) -u-> (B)
-  (B) -u-> (sourceType)
-  node (C) as " " #black
-  (edgeType) -d-> (C)
-  (C) -d-> (targetType)
+  (sourceType) -[hidden]d-> (targetType)
+  (B) .r-> sourceType
+  (C) .r-> targetType
+  node (D) as " " #black
+  node (E) as " " #black
 }
+rectangle "MetaMetaMeta" {
+  node (nodeType)
+  node (edgeType)
+  (nodeType) -[hidden]d-> (edgeType)
+  (Text) -r-> (nodeType) : type
+  (Sheet) -r-> (nodeType) : type
+  (sourceType) --> (edgeType) : type
+  (targetType) --> (edgeType) : type
+}
+(sourceType) -l- (D)
+(D) -l-> (edgeType)
+(targetType) -l- (E)
+(E) -l-> (nodeType)
 @enduml
