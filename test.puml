@@ -1,0 +1,23 @@
+@startuml
+rectangle "Nodes" {
+  node (source)
+  node (target)
+  node (A) as " " #black
+  (source) --> (A)
+  (A) --> (target)
+}
+rectangle "Meta" {
+  node (sourceType)
+  node (targetType)
+  node (edgeType)
+  (source) -> (sourceType) : type
+  (target) -> (targetType) : type
+  (A) -> (edgeType)
+  node (B) as " " #black
+  (edgeType) -u-> (B)
+  (B) -u-> (sourceType)
+  node (C) as " " #black
+  (edgeType) -d-> (C)
+  (C) -d-> (targetType)
+}
+@enduml
