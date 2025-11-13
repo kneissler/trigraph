@@ -1,4 +1,5 @@
 @startuml
+left to right direction
 rectangle "Nodes" {
   node (MySheet)
   node (MyText)
@@ -10,8 +11,8 @@ rectangle "Meta" {
   node (Sheet)
   node (Text)
   node (Contains)
-  (MySheet) --> (Sheet) : type
-  (MyText) --> (Text) : type
+  (MySheet) -[#red]-> (Sheet)
+  (MyText) -[#red]-> (Text)
   (A) .> (Contains)
   node (B) as " " #black
   (Contains) -u- (B)
@@ -20,26 +21,40 @@ rectangle "Meta" {
   (Contains) -d- (C)
   (C) -d-> (Text)
 }
-rectangle "MetaMeta" {
+rectangle "RelationsMeta" {
   node (sourceType)
   node (targetType)
-  (sourceType) -[hidden]d-> (targetType)
-  (B) .r-> sourceType
-  (C) .r-> targetType
-  node (D) as " " #black
+  node (edge2Node)
+  (sourceType) -[#blue]-> (edge2Node)
+  (targetType) -[#blue]-> (edge2Node)
+  (B) .d-> sourceType
+  (C) .d-> targetType
   node (E) as " " #black
+  node (F) as " " #black
+  (E) .l-> sourceType
+  (F) .l-> targetType
+  (edge2Node) - (E)
+  (edge2Node) - (F)
 }
+rectangle "MetaMeta" {
+  node (nodeTypeNode)
+  node (edgeTypeNode)
+  (E) -> (edgeTypeNode)
+  (F) -> (nodeTypeNode)
+  (nodeTypeNode) -[hidden]d-> (edgeTypeNode)
+  (Text) -r[#red]-> (nodeTypeNode)
+  (Sheet) -r[#red]-> (nodeTypeNode)
+  (Contains) -[#red]u-> (edgeTypeNode)
+  (sourceType) -[#red]-> (edgeTypeNode)
+  (targetType) -[#red]-> (edgeTypeNode)
+  (edge2Node) -[#red]-> (edgeTypeNode)
+}
+(Nodes) -[hidden]r- (Meta)
+(Meta) -[hidden]r- (MetaMeta)
+(MetaMeta) -[hidden]r- (MetaMetaMeta)
 rectangle "MetaMetaMeta" {
-  node (nodeType)
-  node (edgeType)
-  (nodeType) -[hidden]d-> (edgeType)
-  (Text) -r-> (nodeType) : type
-  (Sheet) -r-> (nodeType) : type
-  (sourceType) --> (edgeType) : type
-  (targetType) --> (edgeType) : type
+  (nodeTypeNode) -[#red]-> (typeNodeTypeNode)
+  (edgeTypeNode) -[#red]-> (typeNodeTypeNode)
+  (typeNodeTypeNode) -[#red]-> (typeNodeTypeNode)
 }
-(sourceType) -l- (D)
-(D) -l-> (edgeType)
-(targetType) -l- (E)
-(E) -l-> (nodeType)
 @enduml
