@@ -7,5 +7,5 @@ references:
   type: layer-0.metameta.type.type-relation
 nodes:
   meta-n-node
-edges:
+relations:
   meta-n-node --type--> meta-n-node
