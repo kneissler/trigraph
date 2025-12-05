@@ -1,11 +1,11 @@
 meta:
-  package: layer-0.metameta
-  name: meta-n
+  package: layer-0.MetaMeta
+  name: metaN
   version: 1.0.0
   public: false
 references:
-  type: layer-0.metameta.type.type-relation
+  type: layer-0.MetaMeta.type.typeRelation
 nodes:
-  meta-n-node
+  metaN-node
 relations:
-  meta-n-node --type--> meta-n-node
+  metaN-node --type--> metaN-node
