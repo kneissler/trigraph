@@ -8,4 +8,4 @@ references:
 nodes:
   metaN-nodeType
 relations:
-  metaN-nodeType --type--> metaN-nodeType
+  metaN-nodeType -type-> metaN-nodeType
