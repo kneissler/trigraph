@@ -1,16 +1,16 @@
 meta:
-  package: layer-0.metameta
-  name: metanode-types
+  package: layer-0.MetaMeta
+  name: metaNodeTypes
   version: 1.0.0
   public: true
 references:
-  type: layer-0.metameta.type.type-relation
-  meta-n: layer-0.metameta.meta-n.meta-n-node
+  type: layer-0.MetaMeta.type.typeRelation
+  metaN: layer-0.MetaMeta.metaN.metaN-nodeType
 nodes:  
-  node-type
+  nodeType
   relation
   signature
 relations:
-  node-type --t.type--> meta-n-node
-  relation --t.type--> meta-n-node
-  signature --t.type--> meta-n-node
+  nodeType -type-> metaN
+  relation -type-> metaN
+  signature -type-> metaN
