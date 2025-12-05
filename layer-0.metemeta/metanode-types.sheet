@@ -7,6 +7,10 @@ references:
   type: layer-0.metameta.type.type-relation
   meta-n: layer-0.metameta.meta-n.meta-n-node
 nodes:  
-  meta-n-node
+  node-type
+  relation
+  signature
 relations:
-  meta-n-node --t.type--> meta-n-node
+  node-type --t.type--> meta-n-node
+  relation --t.type--> meta-n-node
+  signature --t.type--> meta-n-node
