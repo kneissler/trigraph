@@ -1,0 +1,12 @@
+meta:
+  package: layer-0.metameta
+  name: metanode-types
+  version: 1.0.0
+  public: true
+references:
+  type: layer-0.metameta.type.type-relation
+  meta-n: layer-0.metameta.meta-n.meta-n-node
+nodes:  
+  meta-n-node
+relations:
+  meta-n-node --t.type--> meta-n-node
