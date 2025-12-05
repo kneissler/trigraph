@@ -1,0 +1,11 @@
+meta:
+  package: layer-0.metameta
+  name: meta-n
+  version: 1.0.0
+  public: false
+reference:
+  t: layer-0.metameta.type
+vertices:
+  meta-n-node
+edges:
+  meta-n-node --t.type--> meta-n-node
