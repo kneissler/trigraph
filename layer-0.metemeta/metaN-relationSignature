@@ -1,0 +1,16 @@
+meta:
+  package: layer-0.MetaMeta
+  name: metaN-relationSignature
+  version: 1.0.0
+  public: false
+references:
+  type: layer-0.MetaMeta.type.typeRelation
+  metaN: layer-0.MetaMeta.metaN.metaN-nodeType
+  sourceType: layer-0.MetaMeta.metaRelations.sourceType
+  targetType: layer-0.MetaMeta.metaRelations.targetType
+nodes:  
+  metaN-relation
+relations:
+  metaN-relation -type-> metaN
+  metaN-relation -sourceType-> metaN
+  metaN-relation -targetType-> metaN
