@@ -3,9 +3,9 @@ meta:
   name: meta-n
   version: 1.0.0
   public: false
-reference:
-  t: layer-0.metameta.type
-vertices:
+references:
+  type: layer-0.metameta.type.type-relation
+nodes:
   meta-n-node
 edges:
-  meta-n-node --t.type--> meta-n-node
+  meta-n-node --type--> meta-n-node
