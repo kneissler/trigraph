@@ -1,0 +1,21 @@
+meta:
+  package: layer-0.MetaMeta
+  name: metaRelations
+  version: 1.0.0
+  public: true
+references:
+  type: layer-0.MetaMeta.type.typeRelation
+  metaN: layer-0.MetaMeta.metaN.metaN-nodeType
+  relation-to-signature: layer-0.MetaMeta.metaRelationSignatures.relation-to-signature
+  signature-to-nodeType: layer-0.MetaMeta.metaRelationSignatures.signature-to-nodeType
+nodes:  
+  sourceType
+  targetType
+  hasSignature
+relations:
+  sourceType -type-> metaN
+  targetType -type-> metaN
+  hasSignature -type-> metaN
+  sourceType -hasSignature-> signature-to-nodeType
+  targetType -hasSignature-> signature-to-nodeType
+  hasSignature -hasSignature-> relation-to-signature
