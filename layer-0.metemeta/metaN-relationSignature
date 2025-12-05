@@ -9,8 +9,8 @@ references:
   sourceType: layer-0.MetaMeta.metaRelations.sourceType
   targetType: layer-0.MetaMeta.metaRelations.targetType
 nodes:  
-  metaN-relation
+  metaN-to-metaN
 relations:
-  metaN-relation -type-> metaN
-  metaN-relation -sourceType-> metaN
-  metaN-relation -targetType-> metaN
+  metaN-to-metaN -type-> metaN
+  metaN-to-metaN -sourceType-> metaN
+  metaN-to-metaN -targetType-> metaN
