@@ -8,6 +8,7 @@ references:
   metaN: layer-0.MetaMeta.metaN.metaN-nodeType
   relation-to-signature: layer-0.MetaMeta.metaRelationSignatures.relation-to-signature
   signature-to-nodeType: layer-0.MetaMeta.metaRelationSignatures.signature-to-nodeType
+  metaN-to-metaN: layer-0.MetaMeta.metaN-relationSignature,metaN-to-metaN
 nodes:  
   sourceType
   targetType
@@ -19,3 +20,6 @@ relations:
   sourceType -hasSignature-> signature-to-nodeType
   targetType -hasSignature-> signature-to-nodeType
   hasSignature -hasSignature-> relation-to-signature
+  sourceType -hasSignature-> metaN-to-metaN
+  targetType -hasSignature-> metaN-to-metaN
+  hasSignature -hasSignature-> metaN-to-metaN
