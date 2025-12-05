@@ -6,6 +6,6 @@ meta:
 references:
   type: layer-0.MetaMeta.type.typeRelation
 nodes:
-  metaN-node
+  metaN-nodeType
 relations:
-  metaN-node --type--> metaN-node
+  metaN-node --type--> metaN-nodeType
