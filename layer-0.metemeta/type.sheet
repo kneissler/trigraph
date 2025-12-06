@@ -1,0 +1,13 @@
+meta:
+  package: layer-0.MetaMeta
+  name: type
+  version: 1.0.0
+  public: true
+references:
+  metaN: layer-0.MetaMeta.metaN.metaN-nodeType
+nodes:  
+  typeRelation
+relations:
+  nodeType -type-> metaN
+  relation -type-> metaN
+  signature -type-> metaN
