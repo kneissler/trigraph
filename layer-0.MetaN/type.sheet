@@ -7,8 +7,8 @@ meta:
   meta-level: N
 references:
 nodes:
-  metaN-typeNode: node that represents meta-meta-type, meta-meta-meta-type and so forth
+  typeNode: node that represents meta-meta-type, meta-meta-meta-type and so forth
   typeRelation: node representing the type relation, linking one meta-level to the next
 relations:
-  typeRelation -typeRelation-> metaN-TypeNode
-  metaN-TypeNode -typeRelation-> metaN-TypeNode
+  typeRelation -typeRelation-> typeNode
+  typeNode -typeRelation-> typeNode

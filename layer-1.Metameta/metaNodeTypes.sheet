@@ -1,0 +1,16 @@
+meta:
+  package: layer-1.MetaMeta
+  description: type nodes for meta-nodes (nodes on meta-level 1)
+  name: metaNodeTypes
+  version: 1.0.0
+  public: true
+  meta-level: 2
+references:
+  metaN: layer-0.MetaN.type.typeNode
+  type: layer-0.MetaN.type.typeRelation
+nodes:
+  nodeType: type node for meta-nodes that represent a node type (of nodes in meta level 0)
+  relation: type node for meta-nodes that represent a relation (between nodes in meta level 0)
+  signature: type node for meta-nodes that represent a signature (of a relation between nodes in meta level 0)
+relations:
+  * -type-> metaN
