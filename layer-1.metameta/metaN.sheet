@@ -1,8 +1,10 @@
 meta:
   package: layer-0.MetaMeta
   name: metaN
+  description: meta-
   version: 1.0.0
   public: false
+  meta-level: 3
 references:
   type: layer-0.MetaMeta.type.typeRelation
 nodes:
