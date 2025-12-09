@@ -1,8 +1,7 @@
 meta:
   package: layer-0.MetaMeta
-  name: metaN-relationSignature
+  name: metaRelationSignatures
   description: defines the relation signature for meta-meta-relations (between nodes of meta layer 2 and above)
-  version: 1.0.0
   public: false
   meta-level: 3
 references:

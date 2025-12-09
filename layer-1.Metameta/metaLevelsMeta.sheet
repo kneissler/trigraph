@@ -1,0 +1,18 @@
+meta:
+  package: layer-1.MetaMeta
+  name: metaLevels
+  description: markers for meta levels of nodes (targets of metaLevelRelation) and relations from nodes and between them
+  public: true
+  meta-level: 1
+references:
+  metaN: layer-0.MetaN.type.typeNode
+  type: layer-0.MetaN.type.typeRelation
+nodes:
+  meta-level-0: marker for meta level 0
+  meta-level-1: marker for meta level 1
+  meta-level-2: marker for meta level 2
+  meta-level-marker: class of meta level markers
+  relation: type node for meta-nodes that represent a relation (between nodes in meta level 0)
+  signature: type node for meta-nodes that represent a signature (of a relation between nodes in meta level 0)
+relations:
+  * -type-> metaN
