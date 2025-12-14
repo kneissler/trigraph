@@ -1,18 +1,25 @@
 meta:
   package: layer-1.MetaMeta
   name: metaLevels
-  description: markers for meta levels of nodes (targets of metaLevelRelation) and relations from nodes and between them
-  public: true
-  meta-level: 1
+  description: meta nodes (type and relation) for metaLevel markers
+  public: false
+  meta-level: 2
 references:
   metaN: layer-0.MetaN.type.typeNode
   type: layer-0.MetaN.type.typeRelation
+  hasSignature: .metaRelations.hasSignature
+  sourceType: .metaRelations.sourceType
+  targetType: .metaRelations.targetType
 nodes:
-  meta-level-0: marker for meta level 0
-  meta-level-1: marker for meta level 1
-  meta-level-2: marker for meta level 2
-  meta-level-marker: class of meta level markers
-  relation: type node for meta-nodes that represent a relation (between nodes in meta level 0)
-  signature: type node for meta-nodes that represent a signature (of a relation between nodes in meta level 0)
+  metaLevelType: the type node for meta level markers
+  metaLevel: relation that marks nodes with their meta level
+  nextMetaLevel: relation that maps a meta level to the next higher meta level
+  metaLevelSignature: signature of metaLevelRelation
+  nextMetaLevelSignature: signature of nextMetaLevelRelation
 relations:
   * -type-> metaN
+  metaLevel -hasSignature-> metaLevelSignature
+  metaLevelSignature -targetType-> metaLevelType
+  nextMetaLevel -hasSignature-> nextMetaLevelSignature
+  nextMetaLevelSignature -sourceType-> metaLevelType
+  nextMetaLevelSignature -targetType-> metaLevelType

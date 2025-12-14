@@ -16,9 +16,15 @@ references:
 nodes:
   relation-to-signature: representing a meta relation from a relation to a signature
   signature-to-nodeType: representing a meta relation from a signature to a node type
+  signature-to-valency: representing a meta relation from a signature to a valency
+  relation-to-relation: representing a meta relation between relations
 relations:
   * -type-> metaN
   relation-to-signature -sourceType-> relation
   relation-to-signature -targetType-> signature
   signature-to-nodeType -sourceType-> signature
   signature-to-nodeType -targetType-> nodeType
+  signature-to-valency -sourceType-> signature
+  signature-to-valency -targetType-> valencyType
+  relation-to-relation -sourceType-> relation
+  relation-to-relation -targetType-> relation

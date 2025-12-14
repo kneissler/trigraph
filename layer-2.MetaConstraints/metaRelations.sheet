@@ -1,8 +1,7 @@
 meta:
   package: layer-1.MetaMeta
   name: metaRelations
-  description: relation nodes for meta relations (between relation nodes on meta level 1 and higher)
-  version: 1.0.0
+  description: relation nodes for meta relations (between nodes on le
   public: true
   meta-level: 2
 references:
@@ -14,10 +13,14 @@ references:
 nodes:  
   sourceType: metaRelation that specifies the type of the source (for a relation signature)
   targetType: metaRelation that specifies the type of the target (for a relation signature)
-  hasSignature: metaRelation that specifies the signatire (for a relation)
+  hasSignature: metaRelation that specifies the signature (for a relation)
+  valency: metaRelation that specifies the allowed valences (number of outgoing relations at source node)
+  inverseTransitiveHull: metaRelation that specifies that a relation gets extended to its implicit inverse transitive hull (so if the explicit relation is "parent", the implicit relation "descendant" will be constructed automatically)
 relations:
   * -type-> metaN
   * -hasSignature-> metaN-to-metaN
   sourceType -hasSignature-> signature-to-nodeType
   targetType -hasSignature-> signature-to-nodeType
   hasSignature -hasSignature-> relation-to-signature
+  valency -hasSignature-> signature-to-valency
+  inverseTransitiveHull -hasSignature-> relation-to-relation
