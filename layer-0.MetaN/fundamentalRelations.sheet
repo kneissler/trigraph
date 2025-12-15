@@ -1,0 +1,18 @@
+meta:
+  name: fundamentalMetaRelations
+  package: layer-0.MetaN
+  description: defines nodes for the three fundamental relations (type, metaLevel, nextMetaLevel)
+  public: false
+  meta-level: 3
+  type: metaNTypeNode
+references:
+  metaNTypeNode: layer-0.MetaN.type.typeNode
+  signature: .metaMetaRelations.signature
+nodes:
+  typeRelation: represents the type relation (which links any node to its type on next meta level)
+  metaLevelRelation: represents the metaLevel relation (which specifies for every node the meta level it "lives" in)
+  nextMetaLevelRelation:  represents the nextMetaLevel relation (which defines the meta level hierarchy)
+relations:
+  typeRelation -signature-> typeRelationSignature
+  metaLevelRelation -signature-> metaLevelRelationSignature
+  nextMetaLevelRelation -signature-> nextMetaLevelRelationSignature

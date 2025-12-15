@@ -1,0 +1,7 @@
+meta:
+  name: metaN
+  description: The core package of the meta-hierarchy, constitutes layer ß, contains definition of all meta^N nodes (with N >= 3) plus the "class" node (a mete-meta-node), defines type-relation, metaLevel-relation and metaSignatures
+  layer: 0
+  version: 1.0.0
+dependencies:
+subpackages:

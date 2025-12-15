@@ -1,0 +1,27 @@
+meta:
+  name: fundamentalMetaRelationSignatures
+  package: layer-0.MetaN
+  description: defines signature of the three fundamental relations (type, metaLevel, nextMetaLevel)
+  public: false
+  meta-level: 3
+  type: metaNTypeNode
+references:
+  metaNTypeNode: layer-0.MetaN.type.typeNode
+  metaTypeNode: .fundamentalMetaTypes.metaTypeNode
+  class: .fundamentalMetaTypes.class
+  metaLevelTypeNode: .fundamentalMetaTypes.metaLevelTypeNode
+  metaNTypeNode: layer-0.MetaN.type.typeNode
+  sourceType: .metaMetaRelations.sourceType
+  targetType: .metaMetaRelations.targetType
+nodes:
+  typeRelationSignature: defines signature of the type relation (source can be any node, a few possible target types are specified)
+  metaLevelRelationSignature: defines signature of the metaLevel relation (source can be any node, target must be metaLevelNodeType)
+  nextMetaLevelRelationSignature:  defines signature of the nextMetaLevel relation (source and target must be metaLevelTypeNode)
+relations:
+  typeRelationSignature -targetType-> metaNTypeNode
+  typeRelationSignature -targetType-> metaTypeNode
+  typeRelationSignature -targetType-> class
+  typeRelationSignature -targetType-> metaLevelTypeNode
+  metaLevelRelationSignature -targetType-> metaLevelTypeNode
+  nextMetaLevelRelationSignature -sourceType-> metaLevelTypeNode
+  nextMetaLevelRelationSignature -targetType-> metaLevelTypeNode

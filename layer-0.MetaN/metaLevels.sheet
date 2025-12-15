@@ -1,0 +1,22 @@
+meta:
+  name: metaLevels
+  package: layer-0.MetaN
+  description: markers to indicate meta level
+  public: true
+  meta-level: 2
+  type: metaLevelTypeNode
+references:
+  metaLevelTypeNode: .fundamentalMetaTypes.metaLevelTypeNode
+  nextMetaLevel: .fundamentalMetaRelations.nextMetaLevel
+nodes:
+  metaLevel-0: meta level marker for meta level 0
+  metaLevel-1: meta level marker for meta level 1
+  metaLevel-2: meta level marker for meta level 2
+  metaLevel-3: meta level marker for meta level 3
+  metaLevel-N: meta level marker for meta levels 4,5,6,...
+relations:
+  metaLevel-0 -nextMetaLevel-> metaLevel-1
+  metaLevel-1 -nextMetaLevel-> metaLevel-2
+  metaLevel-2 -nextMetaLevel-> metaLevel-3
+  metaLevel-3 -nextMetaLevel-> metaLevel-N
+  metaLevel-N -nextMetaLevel-> metaLevel-N
